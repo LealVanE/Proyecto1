@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    //este es un objeto cualquiera.
+    //keys = propiedad (el nombre de la columna)
+    //values = valores (la cantiidad o el dato)
+    let datos = ({a:1, b:2, c:3});
+    //a = 1
+    //b = 2
+    //c = 3
+
+    ObtenerM(datos);
+
+    //este es el inicio de la funcion
+    //objeto = cualquier objeto que se le pase a la funcion
+    function ObtenerM(objeto) {
+      
+        //se obtendran las keys (variables) del objeto
+        let resultado = Object.keys(objeto);
+        //se obtendrán los valores del objeto (values)
+        let resultadoV = Object.values(objeto);
+
+        //"log" siempre va con "console"
+        console.log('Este es el resultado de las keys: ');
+        console.log(resultado);
+
+        console.log('Este es el resultado de las values: ');
+        console.log(resultadoV);
+
+
+        //Declaramos la variable (array) que contendrá nuestros resultados
+        let Mresultado = [];
+
+        //insertamos el primer conjunto de resultados con push
+        Mresultado.push(resultado);
+
+        //insertamos el segundo conjunto de resultados con push
+        Mresultado.push(resultadoV);
+
+        //imprimimos el array (conjunto de datos) en consola.
+        console.log(Mresultado);
+
+
+    }
+</script>
