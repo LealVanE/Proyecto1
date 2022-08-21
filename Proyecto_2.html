@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+
+<body>
+    
+    <div class="container" style="text-align: center;">
+        <h1 id="titulo1" style="font-size: 100px;">Contador</h1>
+        <h1 id="Numero" style="font-size: 80px;">0</h1>
+        <hr>
+        
+        <!--Todas son clases de boostrap  -->
+        <!-- Un contenedor de los botones -->
+        <div class="container">
+            <!-- Esta es una fila -->
+            <div class="row">
+                <!-- Esto es un grupo de botones -->
+                <div class="btn-group">
+                    <button id="Subir" class="btn btn-outline-success">Aumentar</button>
+                    <button id="Reiniciar" class="btn btn-outline-info">Reiniciar</button>
+                    <button id="Disminuir" class="btn btn-outline-danger">Disminuir</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    //Listener para cuando le den click al botón
+    document.querySelector("#Subir").addEventListener("click",function(evento){
+        //aca es donde se colocan todas las instrucciones del click
+        var texto= document.getElementById("Numero").innerHTML;
+        
+        //convertir el texto a "numero" y sumarle 1
+        var suma = parseInt(texto) + 1;
+        //se traslada el numero a la función para determinar el color
+        PintarTexto(suma);
+
+        //asignamos la suma al elemento que utilizamos como contador.
+        document.getElementById("Numero").innerHTML=suma;
+    }); 
+    
+    document.querySelector("#Reiniciar").addEventListener("click", function(evento){
+        //reiniciamos el elemento a 0
+        document.getElementById("Numero").innerHTML=0;
+
+        //se traslada el numero a la funcion para determinar el color
+        PintarTexto(0);
+    });
+
+    //disminuir
+
+    document.querySelector("#Disminuir").addEventListener("click", function(evento){
+        //obtenemos el texto que tiene nuestro h1 con Id Numero
+        let texto = document.getElementById("Numero").innerHTML;
+        //convertimos el texto obtenido a entero y le restamos 1
+        let resta = parseInt(texto)-1;
+
+        PintarTexto(resta);
+        //asignamos la resta a nuestro h1
+        document.getElementById("Numero").innerHTML=resta;
+    });
+
+
+    //pintar el h1 que contiene el contador.
+    //la funcion recibirá el numero y con el determinamos el color que necesitamos.
+function PintarTexto(num){
+    //se obtiene todas las propiedades del h1 (que contiene el Id = Numero)
+    let elemento= document.querySelector("#Numero");
+
+    //declaramos un if (condicion) para comprobar los numeros
+    //num>0 numeros mayores a 0 (positivos)
+    if (num>0) {
+        //elemento es h1
+        //style es su propiedad
+        //color es el valor de style
+        elemento.style.color="green";  
+    } 
+    //num<0 numeros menores a 0 (negativos)
+    else if(num<0) {
+        elemento.style.color="red";
+    }
+    //si no se cumplen las condiciones anteriores significa que el numero es 0
+    else
+    {
+        elemento.style.color="blue";
+    }
+}
+
+</script>
