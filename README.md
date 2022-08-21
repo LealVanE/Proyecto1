@@ -1,2 +1,1 @@
-# Proyecto1
-Crear una función que tome un objeto y devuelva los campos y los valores como matrices separadas. Devuelve los campos ordenados alfabéticamente, y sus correspondientes valores en el mismo orden.
+Soy Nathaniel Leal, he realizado 2 de los 4 proyectos con apoyo de un ingeniero, pues mi conocimiento en JavaScript no era muy avanzado.
